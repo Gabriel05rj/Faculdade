@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <header class="row">
+            <nav class="navbar navbar-expand-lg nave">
+                <div class="container-fluid">
+                    <img src="imgs/logo.png" alt="logo">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sobre</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Shows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Performances</a>
+                            </li>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--Card banner-->
+
+        <div class="row">
+            <div class="card text-bg-dark">
+                <img src="imgs/bck-destaque.png" class="card-img" alt="imagem-destaque">
+                <div class="card-img-overlay ms-auto txtbanner">
+                    <h5 class="card-title">Nosso menino:</h5>
+                    <p class="card-text ">Ney matogrosso
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Div central-->
+
+        <div class="divcentro">
+            <article class="row">
+                <div class="card col-12 col-md-4 cartcredit">
+                    <div class="card-body">
+                        <h5 class="card-title">HISTÓRIA DA CANÇÃO</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <button type="button" class="btn btn-danger mx-5">Yolanda</button>
+                        <a href="#" class="card-link text-light">Sangue Latino</a>
+                    </div>
+                </div>
+
+                <div class="card text-center col-12 col-md-7 mx-5 cartozao">
+                    <div class="card-header">
+                        Canta
+                    </div>
+                    <div class="card-body corpo">
+                        <h5 class="card-title">Eu Quero É Botar Meu Bloco Na Rua</h5>
+                        <p class="card-text">a música mais tocada e de maior sucesso de Ney Matogrosso é "poema"</p>
+                        <a href="#" class="btn btn-danger">Conheça</a>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        Menino Ney
+                    </div>
+                </div>
+            </article>
+
+            <div class="row segundalinha">
+                <div class="card mb-3 col-12 col-md-4 mx-3 cartin pt-5">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="imgs/figurinha.png" class="img-fluid rounded-start" alt="figurinha">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                    ullamcorper nulla id suscipit gravida. Nunc tempor pretium mi. Integer dignissim,
+                                    purus sit amet elementum fringilla,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-12 col-md-3 mx-3 cartin">
+                    <img src="imgs/disco.jpg" class="card-img-topo" alt="album">
+                    <div class="card-body">
+                        <h5 class="card-title">Discografia</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper
+                            nulla id suscipit gravida.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-3 col-12 col-md-3 mx-3 cartin discin">
+                    <div class="card-header">
+                        <img src="imgs/ico-music.png" alt="disco">
+                        Mais Jovem que Muito Jovem
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camaleônico</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper
+                            nulla id suscipit gravida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Ultima Linha-->
+            <div class="row ultimera">
+                <p class="col-3 textin">Inveja desse Joelho?</p>
+                <form class="row g-3 col-3">
+                    
+                    <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Nome Completo">
+                    </div>
+                </form>
+                <form class="row g-3 col-3">
+                    <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="E-mail">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!--fFooter-->
+            <div class="row">
+                <footer>
+                    <div>
+                        <form class="row g-3 pt-3 acaba">
+                            <p class="col-9 ">Copyright@Depre3</p>
+                            <div class="col-2 ">
+                                <label for="inputPassword2" class="visually-hidden">Password</label>
+                                <input type="password" class="form-control" id="inputPassword2" placeholder="E-mail">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-danger">BUSCAR</button>
+                            </div>
+                        </form>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
