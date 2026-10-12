@@ -1,3 +1,8 @@
+Sobre o Projeto
+
+Um sistema voltado para escolas criado com base no framework django, tendo sido realizado a criação do app portal, classes, formularios e urls para a pagina web do sistema
+
+
 Erros do código no projeto Sistema Escolar
 
 1 `urls.py (sistema)` - não possui um caminho para a view do cadastro impossibilitando de acessar a pagina, necessitando import das urls do portal
@@ -8,7 +13,6 @@ Erros do código no projeto Sistema Escolar
 6 `forms.py` - erro na maneira de como classe Professor visto que models.py está na mesma pasta que o arquivo de formulários
 7 `admin.py` - na classe ProfessorAdmin o parâmetro "especialidade" não existe na classe Professor em models.py
 8 `urls.py(portal)` - erro de caminho do sistema
-
 
 Grupo
 
