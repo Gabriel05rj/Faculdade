@@ -1,0 +1,36 @@
+#banner {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner2 {
+    background-color: black;
+    color: white;
+    padding: 50px;
+}
+
+.card-body{
+    padding-top: 150px;
+}
+
+.textin {
+    padding-top: 110px;
+}
+
+.card-img-topo {
+    width: 70%;
+    height: 70%;
+    align-self: center;
+}
+
+.fim{
+    padding: 40px;
+    background-color: lightyellow;
+}
+
+/* .seila {
+    padding-left: 400px;
+} */

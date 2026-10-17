@@ -1,0 +1,38 @@
+.navegador {
+    padding-bottom: 20px        ;
+}
+
+.superbanner {
+    background-color: orangered;
+}
+
+#banner {
+    height: 40%;
+    width: 40%;
+    padding-right: 60px;
+    margin: 30px;    
+}
+
+.conteudo1 {
+    margin-bottom: 100px;
+    padding: 30px 30px;
+    color: white;
+}
+
+.baixo {
+    padding: 20px;
+    background-color: orangered;
+}
+
+.texto {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+.pe {
+    display: flex;
+    justify-content: center;
+}
