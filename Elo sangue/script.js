@@ -1,9 +1,12 @@
 const form = document.getElementById('FormCadastro');
 const nome = document.getElementById('nome');
+const sobrenome = document.getElementById('sobrenome');
 const email = document.getElementById('email');
 const telefone = document.getElementById('telefone');
-const campoSenha = document.getElementById('senha');
-const btnolho = document.getElementById('btnolho');
+const campoSenha = document.getElementById('campoSenha');
+const confirmarSenha = document.getElementById('confirmarSenha');
+const btnOlho = document.getElementById('btnOlho');
+const btnOlhoConfirmar = document.getElementById('btnOlhoConfirmar');
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
@@ -18,6 +21,13 @@ form.addEventListener('submit', (event) =>{
         esconderErro('erroNome');
     }
 
+    if(sobrenome.value.trim() === ""){
+        mostrarErro('erroSobrenome', 'O campo sobrenome não pode estar em branco');
+        formularioValido = false;
+    }else{
+        esconderErro('erroSobrenome');
+    }
+
     //validar email
     if(!email.value.includes('@') || !email.value.includes('.')){
         mostrarErro('erroEmail', 'O campo email não pode estar em branco')
@@ -27,22 +37,35 @@ form.addEventListener('submit', (event) =>{
     }
 
     //validar telefone
-    if(telefone.value.length<12){
+    if(telefone.value.trim() === ""){
         mostrarErro('erroTelefone', 'O campo telefone não pode estar em branco')
+        formularioValido = false;
+    }else if(telefone.value.replace(/\D/g,'').length < 10){
+        mostrarErro('erroTelefone', 'Informe um telefone válido com DDD.')
         formularioValido = false;
     }else{
         esconderErro('erroTelefone');
     }
 
     //validar senha
-    if(senha.value.length<6){
-        mostrarErro('erroSenha','A senha deve ter pelo menos 6 caracteres')
-        formularioValido = false
-    }else if(senha.value.trim() == ""){
+    if(campoSenha.value.trim() == ""){
         mostrarErro('erroSenha', 'O campo senha não pode estar em branco')
         formularioValido = false;
+    }else if(senha.value.length<6){
+        mostrarErro('erroSenha','A senha deve ter pelo menos 6 caracteres')
+        formularioValido = false
     }else{
         esconderErro('erroSenha');
+    }
+
+     if (confirmarSenha.value.trim() === "") {
+        mostrarErro('erroConfirmarSenha', 'Por favor, confirme sua senha.');
+        formularioValido = false;
+    } else if (campoSenha.value !== confirmarSenha.value) {
+        mostrarErro('erroConfirmarSenha', 'As senhas não coincidem.');
+        formularioValido = false;
+    } else {
+        esconderErro('erroConfirmarSenha');
     }
 
     if(formularioValido){
@@ -64,13 +87,22 @@ function esconderErro(idElemento){
     spanErro.style.display = 'none';
 }
 
-btnolho.addEventListener('click',() =>{
-
-    if(campoSenha.type === 'password'){
+btnOlho.addEventListener('click', () => {
+    if (campoSenha.type === 'password') {
         campoSenha.type = 'text';
-        btnolho.textContent = '🔓';
-    }else{
+        btnOlho.textContent = '🔓'; 
+    } else {
         campoSenha.type = 'password';
-        btnolho.textContent = '👁';
+        btnOlho.textContent = '👁';
+    }
+});
+
+btnOlhoConfirmar.addEventListener('click', () => {
+    if (confirmarSenha.type === 'password') {
+        confirmarSenha.type = 'text';
+        btnOlhoConfirmar.textContent = '🔓';
+    } else {
+        confirmarSenha.type = 'password';
+        btnOlhoConfirmar.textContent = '👁';
     }
 });
