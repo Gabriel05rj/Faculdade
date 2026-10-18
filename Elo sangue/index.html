@@ -1,98 +1,359 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo-Sangue</title>
+
     <link href="./src/output.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-    <title>Cadastro Elo sangue</title>
+    <script src="./main.js" defer></script>
 </head>
-<body class="min-h-screen flex bg-[#ffeade] items-center justify-center p-4">
+<body class="bg-[#F9ECE5] text-black">
+
+    <header class="mx-auto mt-2 flex max-w-6xl items-center justify-between bg-[#F9F7F9] px-5 py-3">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2 no-underline">
+        <svg class="h-8 w-6 text-[#D70F0F]"
+             viewBox="0 0 24 32"
+             fill="currentColor">
+            <path d="M12 0 C12 0 1 15 1 21 A11 11 0 0 0 23 21 C23 15 12 0 12 0Z"/>
+        </svg>
+
+        <div>
+            <h1 class="text-lg font-bold leading-tight">
+                Elo-<span class="text-[#D70F0F]">Sangue</span>
+            </h1>
+            <p class="text-[9px] text-gray-500">
+                Conectando doações, salvando vidas
+            </p>
+        </div>
+    </a>
+
+    <!-- Menu -->
+    <nav class="hidden items-center gap-7 text-sm md:flex">
+        <a href="index.html"
+           class="text-[#D70F0F] underline underline-offset-4">
+            Início
+        </a>
+
+        <a href="#doar" class="transition hover:text-[#D70F0F]">
+            Doar
+        </a>
+
+        <a href="#hemocentros" class="transition hover:text-[#D70F0F]">
+            Hemocentros
+        </a>
+
+        <a href="#duvidas" class="transition hover:text-[#D70F0F]">
+            Dúvidas frequentes
+        </a>
+    </nav>
+
+    <!-- Notificações e perfil -->
+    <div class="flex items-center gap-4">
+
+        <button type="button"
+                aria-label="Notificações"
+                class="text-gray-600 transition hover:text-[#D70F0F]">
+            <svg class="h-6 w-6" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.8">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                <path d="M10 21h4"/>
+            </svg>
+        </button>
+
+        <div class="h-7 border-l border-gray-300"></div>
+
+        <a href="./Cadastro/index.html"
+        aria-label="Minha conta"
+        class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-gray-600 transition hover:bg-red-100 hover:text-[#D70F0F] cursor-pointer">
+            <svg class="h-6 w-6" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+            </svg>
+        </a>
+
+    </div>
     
-    <main class="w-full max-w-2xl rounded-2xl bg-white p-8 shadow-x1">
-        <h1 class="text-3xl font-bold text-center text-red-500 tracking-wide mb-2">Elo-Sangue</h1>
 
-        <h2 class="text-center text-3xl font-bold text-slate-800">Criar conta</h2>
-        <p class="mt-2 text-center text-sm text-slate-500">Preenchar seus dados abaixo para criar sua conta</p>
+</header>
+    <!-- BANNER PRINCIPAL -->
+<section class="relative mx-auto mt-5 flex h-44 max-w-6xl items-center overflow-hidden bg-[#E5D4C8]">
 
-        <!--formulario-->
-        <form id="FormCadastro"  class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3" novalidate>
-            <!--Nome-->
-            <div class="flex flex-col gap-1">
-                <label for="nome" class="text-sm font-semibold text-slate-700">Nome</label>
-                <div class="relative flex items-center">
-                    <input type="text" id="nome" placeholder="Digite seu nome" 
-                        class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100">
-                </div>
-                <span id="erroNome" class="hidden text-xs text-red-500"></span>
+    <!-- Imagem de doação -->
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Blood_donation_-_photo_of_arm.jpg"
+        alt="Pessoa doando sangue"
+        class="absolute inset-0 h-full w-full object-cover object-center"
+    >
+
+    <!-- Sobreposição para destacar o texto -->
+    <div class="absolute inset-0 bg-linear-to-r from-[#EADBD0] via-[#EADBD0]/90 to-transparent"></div>
+
+    <!-- Texto do banner -->
+    <div class="relative z-10 ml-8 max-w-md">
+
+        <h2 class="text-3xl font-bold leading-tight">
+            Doe sangue,
+            <span class="block text-[#D70F0F]">salve vidas</span>
+        </h2>
+
+        <a
+            href="#doar"
+            class="mt-3 inline-block rounded-full bg-[#D70F0F] px-6 py-2 text-sm font-medium text-white transition hover:bg-red-800"
+        >
+            Quero doar
+        </a>
+
+    </div>
+
+    <!-- Indicadores do banner -->
+    <div class="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+        <span class="h-2 w-2 rounded-full bg-[#D70F0F]"></span>
+        <span class="h-2 w-2 rounded-full bg-gray-400"></span>
+        <span class="h-2 w-2 rounded-full bg-gray-400"></span>
+    </div>
+
+</section>
+    <!-- COMO FUNCIONA -->
+<section class="mx-auto mt-6 w-full max-w-6xl px-4">
+
+    <h2 class="mb-3 text-lg font-bold">
+        Como funciona?
+    </h2>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+        <!-- CARD 1 -->
+        <article class="flex items-start gap-3 bg-white p-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100 text-xl">
+                👤
             </div>
 
-            <!-- Sobrenome -->
-            <div class="flex flex-col gap-1 justify-end"> <!-- O justify-end alinha o input perfeitamente com o do lado -->
-                <div class="relative flex items-center">
-                    <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" 
-                        class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100">
-                </div>
-                <span id="erroSobrenome" class="hidden text-xs text-red-500"></span>
+            <div>
+                <h3 class="text-sm font-bold">
+                    1. Cadastre-se
+                </h3>
+
+                <p class="mt-1 text-xs text-gray-500">
+                    Crie seu perfil no Elo-Sangue de forma rápida e segura.
+                </p>
+            </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="flex items-start gap-3 bg-white p-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100 text-xl">
+                📍
             </div>
 
-            <!--Email-->
-            <div class="flex flex-col gap-1 md:col-span-2">
-                <label for="email" class="text-sm font-semibold text-slate-700">E-mail</label>
-                <div class="relative flex items-center ">
-                    <input type="email" id="email" placeholder="seuemailex@gmail.com" 
-                    class=" w-full rounded-lg border border-slate-300 px-4 py-2 text-sm focus:border-red-800 focus:outline-none focus:ring-2 focus:ring-blue-100">
-                </div>
-                <span id="erroEmail" class="hidden text-xs text-red-500"></span>
+            <div>
+                <h3 class="text-sm font-bold">
+                    2. Encontre um local
+                </h3>
+
+                <p class="mt-1 text-xs text-gray-500">
+                    Veja os hemocentros mais próximos de você.
+                </p>
+            </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="flex items-start gap-3 bg-white p-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100 text-xl">
+                🩸
             </div>
 
-            <!--Telefone-->
-            <div class="flex flex-col gap-1 md:col-span-2 ">
-                <label for="telefone" class="text-sm font-semibold text-slate-700">Telefone</label>
-                <div class="relative flex items-center">
-                    <input type="text" id="telefone" placeholder="(00)00000-0000" 
-                        class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm focus:border-red-800 focus:outline-none focus:ring-2 focus:ring-blue-100">
-                </div>
-                <span id="erroTelefone" class="hidden text-xs text-red-500"></span>
+            <div>
+                <h3 class="text-sm font-bold">
+                    3. Doe agora
+                </h3>
+
+                <p class="mt-1 text-xs text-gray-500">
+                    Agende sua doação e vá até o local escolhido.
+                </p>
+            </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="flex items-start gap-3 bg-white p-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100 text-xl">
+                📄
             </div>
 
-            <!--Senha-->
-            <div class="w-full relative flex flex-col gap-1">
-                <div class="relative flex items-center">
-                     <input type="password" id="campoSenha" placeholder="No mínimo 6 caracteres" 
-                         class="w-full rounded-lg border border-slate-300 pl-4 pr-10 py-2.5 text-sm focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100">
-                     <button type="button" id="btnOlho" class="absolute right-3 text-lg cursor-pointer select-none opacity-60 hover:opacity-100">
-                         👁️ 
-                     </button>
-                </div>
+            <div>
+                <h3 class="text-sm font-bold">
+                    4. Acompanhe
+                </h3>
 
-                <span id="erroSenha" class="hidden text-xs text-red-500"></span>
+                <p class="mt-1 text-xs text-gray-500">
+                    Veja seu histórico e fique por dentro da próxima doação.
+                </p>
             </div>
+        </article>
 
-            <!--COnfirmar senha (precisar ver como fazer)-->
-            <div class="w-full relative flex flex-col gap-1">
-                <div class="relative flex items-center">
-                     <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" 
-                         class="w-full rounded-lg border border-slate-300 pl-4 pr-10 py-2.5 text-sm focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100">
-                      <button type="button" id="btnOlhoConfirmar" class="absolute right-3 text-lg cursor-pointer select-none opacity-60 hover:opacity-100">
-                         👁️ 
-                     </button>
-                </div>
-                
-                <span id="erroConfirmarSenha" class="hidden text-xs text-red-500"></span>
-            </div>
+    </div>
 
+</section>
+<!-- HEMOCENTROS PRÓXIMOS -->
+<section id="hemocentros"
+    class="mx-auto mt-6 w-full max-w-6xl px-4">
 
-            <!--Enviar-->
-            <button type="submit" class="mt-4 md:col-span-2 w-full rounded-lg bg-red-600 py-3 text-sm font-bold text-white transition-all hover:bg-red-900 active:scale-[0.98]">
-                Cadastrar
-            </button>
+    <!-- Título da seção -->
+    <div class="mb-3 flex items-center justify-between">
 
-            <p class="md:col-span-2 text-center text-sm text-slate-600 mt-2">
-                Já tem uma conta? <a href="#" class="text-red-600 font-bold hover:underline">Entrar</a>
+        <h2 class="text-base font-bold">
+            Hemocentros próximos de você
+        </h2>
+
+        <a href="#hemocentros"
+            class="text-xs font-medium text-[#D70F0F] hover:underline">
+            Ver todos →
+        </a>
+
+    </div>
+
+    <!-- Card do hemocentro -->
+    <article class="flex flex-col items-center gap-4 bg-white p-4 sm:flex-row">
+
+        <!-- Imagem provisória -->
+        <div class="flex h-20 w-full shrink-0 items-center justify-center bg-[#F9ECE5] text-4xl sm:w-28">
+            🏥
+        </div>
+
+        <!-- Informações -->
+        <div class="flex-1">
+
+            <h3 class="text-sm font-bold">
+                Hemocentro
+            </h3>
+
+            <p class="mt-1 text-xs text-gray-600">
+                📍 Rua Frei Caneca, 8 - Centro, Rio de Janeiro - RJ
             </p>
 
-        </form>
-    </main>
+            <p class="mt-2 text-xs text-gray-500">
+                📍 2,5 km de você
+            </p>
+
+        </div>
+
+        <!-- Botão -->
+        <button
+            type="button"
+            id="verMapa"
+            class="shrink-0 rounded-full bg-[#D70F0F] px-4 py-2 text-xs font-medium text-white transition hover:bg-red-800">
+
+            Ver no mapa →
+
+        </button>
+
+    </article>
+
+</section>
+<!-- ÚLTIMA DOAÇÃO -->
+<section class="mx-auto mt-6 w-full max-w-6xl px-4 pb-8">
+
+    <h2 class="mb-3 text-base font-bold">
+        Sua última doação
+    </h2>
+
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+
+        <!-- CARD DA ÚLTIMA DOAÇÃO -->
+        <article class="flex items-center gap-4 bg-white p-4">
+
+            <!-- Ícone de sangue -->
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-red-100">
+
+                <svg class="h-7 w-7 text-[#D70F0F]"
+                     viewBox="0 0 24 32"
+                     fill="currentColor">
+                    <path d="M12 0 C12 0 1 15 1 21 A11 11 0 0 0 23 21 C23 15 12 0 12 0Z"/>
+                </svg>
+
+            </div>
+
+            <!-- Informações -->
+            <div>
+                <p class="text-sm font-bold">
+                    15 de agosto de 2026
+                </p>
+
+                <p class="mt-1 text-xs text-gray-600">
+                    Hemocentro - Centro, Rio de Janeiro
+                </p>
+
+                <p class="mt-2 text-xs text-gray-500">
+                    Obrigado por fazer a diferença!
+                </p>
+            </div>
+
+        </article>
+
+        <!-- CARD DA PRÓXIMA DOAÇÃO -->
+        <article class="flex items-center justify-between gap-4 bg-white p-4">
+
+            <div>
+                <p class="text-xs text-gray-700">
+                    Você pode doar novamente em:
+                </p>
+
+                <p class="mt-2 text-xl font-bold text-[#D70F0F]">
+                    45 dias
+                </p>
+            </div>
+
+            <button
+                id="verDetalhes"
+                type="button"
+                class="shrink-0 rounded-full bg-[#D70F0F] px-5 py-2 text-sm font-medium text-white transition hover:bg-red-800">
+
+                Ver detalhes
+
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+<!-- JANELA DE DETALHES -->
+<dialog id="modalDetalhes"
+    
+    id="modalDetalhes"
+    class="w-11/12 max-w-md rounded-xl p-6 shadow-xl backdrop:bg-black/40"
+    style="position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0;">
+
+    <h2 class="text-xl font-bold text-[#D70F0F]">
+        Detalhes da última doação
+    </h2>
+
+    <p class="mt-4 text-sm">
+        <strong>Data:</strong> 15 de agosto de 2026
+    </p>
+
+    <p class="mt-2 text-sm">
+        <strong>Local:</strong> Hemocentro - Centro, Rio de Janeiro
+    </p>
+
+    <p class="mt-2 text-sm text-gray-600">
+        Obrigado por fazer a diferença e ajudar a salvar vidas!
+    </p>
+
+    <form method="dialog" class="mt-6 text-right">
+        <button class="rounded-full bg-[#D70F0F] px-5 py-2 text-sm text-white hover:bg-red-800">
+            Fechar
+        </button>
+    </form>
+
+</dialog>
+
+<script src="./js/main.js"></script>
+
 </body>
 </html>
