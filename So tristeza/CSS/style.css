@@ -1,0 +1,79 @@
+.nave {
+    background-color: red;
+}
+
+.navbar-nav {
+    --bs-nav-link-color: rgb(0 0 0);
+}
+
+.navbar-nav :hover {
+    text-decoration: underline;
+}
+
+.txtbanner {
+    background-color:black;
+    width: 200px;
+    height: 100px;
+    color: red;
+}
+.cartcredit{
+    height: 190px;
+    margin-top: 80px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-color: gray;
+}
+
+.cartozao{
+    height: 250px;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-color: gray;
+}
+
+.divcentro {
+    background-color: black;
+}
+
+.corpo{
+    background-color: gray;
+}
+
+.segundalinha {
+    background-color: red;
+}
+
+.cartin{
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+}
+
+.card-img-topo{
+    height: 200px;
+    width: 160px;
+    align-self: center;
+}
+
+.discin {
+    background-color: black;
+    color: white;
+    align-self: center;
+}
+
+.ultimera{
+    color: white;
+}
+
+.textin{
+    align-self: center;
+    margin-left: 20px;
+}
+footer{
+    background-color: white;
+}
+
+.acaba  {
+    margin: 10px;
+}
